@@ -2,25 +2,39 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    --ink: #17212b;
-    --muted: #627085;
-    --line: #dce4ea;
-    --surface: #ffffff;
-    --surface-soft: #f5f7f4;
-    --teal: #116466;
-    --teal-dark: #0b4748;
-    --red: #b64242;
-    --gold: #b7791f;
-    --green: #2f7d57;
-    --blue: #295f9e;
-    --purple: #6f4ba3;
-    --brown: #7a4d35;
-    --black: #20242a;
+    --bg: #080b10;
+    --bg-soft: #10151d;
+    --ink: #f4f7fb;
+    --muted: #9aa7b8;
+    --line: #303a49;
+    --line-strong: #465264;
+    --surface: #151b24;
+    --surface-soft: #1d2530;
+    --field: #0f141c;
+    --accent: #e5484d;
+    --accent-strong: #ff6267;
+    --accent-dark: #b92631;
+    --red: #e5484d;
+    --gold: #d99b2b;
+    --green: #25865a;
+    --blue: #3d72d9;
+    --purple: #7b55c7;
+    --brown: #8c5f43;
+    --black: #05070a;
     color: var(--ink);
+    color-scheme: dark;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg);
+  }
+
+  ::selection {
+    background: rgba(229, 72, 77, 0.32);
   }
 
   button,
@@ -56,7 +70,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .eyebrow {
     margin: 0 0 4px;
-    color: var(--teal);
+    color: var(--accent-strong);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0;
@@ -97,8 +111,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 6px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 12px 30px rgba(23, 33, 43, 0.08);
+    background: rgba(8, 11, 16, 0.74);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38);
   }
 
   .role-switch button {
@@ -113,7 +127,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .role-switch button.is-active {
-    background: var(--ink);
+    background: var(--accent);
     color: #fff;
   }
 
@@ -143,8 +157,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 7px 11px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: #fff;
-    color: var(--muted);
+    background: var(--surface-soft);
+    color: var(--ink);
     font-size: 0.82rem;
     font-weight: 900;
   }
@@ -176,8 +190,8 @@ export const GlobalStyles = createGlobalStyle`
   .panel {
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 18px 45px rgba(23, 33, 43, 0.08);
+    background: rgba(21, 27, 36, 0.94);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
   }
 
   .metric-strip div {
@@ -187,7 +201,7 @@ export const GlobalStyles = createGlobalStyle`
   .metric-strip span {
     display: block;
     margin-bottom: 4px;
-    color: var(--teal-dark);
+    color: var(--accent-strong);
     font-size: 1.75rem;
     font-weight: 900;
   }
@@ -264,9 +278,17 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 42px;
     border: 1px solid var(--line);
     border-radius: 7px;
-    background: #fff;
+    background: var(--field);
     color: var(--ink);
     padding: 9px 11px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.18);
+    outline: none;
   }
 
   textarea {
@@ -291,7 +313,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 14px;
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: #fff;
+    background: var(--bg-soft);
   }
 
   dt {
@@ -320,9 +342,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .belt-white {
-    border: 1px solid #b9c3cc;
-    background: #fff;
-    color: var(--ink);
+    border: 1px solid #c7d0dc;
+    background: #eef2f7;
+    color: #151b24;
   }
 
   .belt-blue {
@@ -349,6 +371,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .status-past-due {
     background: var(--gold);
+    color: #15100a;
   }
 
   .status-inactive,
@@ -357,7 +380,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .status-paused {
-    background: var(--muted);
+    background: var(--line-strong);
   }
 
   .class-list,
@@ -420,7 +443,7 @@ export const GlobalStyles = createGlobalStyle`
   .goal-card {
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: #fff;
+    background: var(--bg-soft);
   }
 
   .class-card,
@@ -446,17 +469,17 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .primary-button {
-    background: var(--teal);
+    background: var(--accent);
     color: #fff;
   }
 
   .primary-button:hover {
-    background: var(--teal-dark);
+    background: var(--accent-strong);
   }
 
   .secondary-button {
     border-color: var(--line);
-    background: #fff;
+    background: var(--surface-soft);
     color: var(--ink);
   }
 
@@ -517,7 +540,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .checkin-item {
-    border-left: 5px solid var(--teal);
+    border-left: 5px solid var(--accent);
   }
 
   .curriculum-item {
@@ -567,7 +590,7 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: space-between;
     width: 100%;
     border-color: var(--line);
-    background: #fff;
+    background: var(--bg-soft);
     color: var(--ink);
     text-align: left;
   }
@@ -575,7 +598,7 @@ export const GlobalStyles = createGlobalStyle`
   .roster-list button:hover,
   .status-buttons button:hover,
   .secondary-button:hover {
-    border-color: var(--teal);
+    border-color: var(--accent);
   }
 
   .roster-list small {
@@ -671,13 +694,13 @@ export const GlobalStyles = createGlobalStyle`
 
   .status-buttons button {
     border-color: var(--line);
-    background: #fff;
+    background: var(--bg-soft);
     color: var(--muted);
     font-size: 0.82rem;
   }
 
   .status-buttons button.is-active {
-    background: var(--ink);
+    background: var(--accent);
     color: #fff;
   }
 
@@ -686,7 +709,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 14px;
     border: 1px dashed var(--line);
     border-radius: 8px;
-    background: #fff;
+    background: var(--bg-soft);
     font-weight: 700;
   }
 
@@ -694,10 +717,10 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 1240px;
     margin: 0 auto 18px;
     padding: 12px 14px;
-    border: 1px solid rgba(182, 66, 66, 0.35);
+    border: 1px solid rgba(229, 72, 77, 0.42);
     border-radius: 8px;
-    background: rgba(182, 66, 66, 0.1);
-    color: var(--red);
+    background: rgba(229, 72, 77, 0.14);
+    color: #ff8084;
     font-weight: 800;
   }
 
@@ -772,9 +795,10 @@ export const GlobalStyles = createGlobalStyle`
 export const AppShell = styled.main`
   min-height: 100vh;
   padding: 28px;
+  color: var(--ink);
   background:
-    linear-gradient(180deg, rgba(17, 100, 102, 0.08), transparent 260px),
-    #eef2f0;
+    linear-gradient(180deg, rgba(229, 72, 77, 0.18), transparent 280px),
+    linear-gradient(135deg, #121824 0%, var(--bg) 46%, #06080d 100%);
 
   @media (max-width: 880px) {
     padding: 18px;
