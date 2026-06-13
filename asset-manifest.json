@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/paul-tom/static/css/main.e6c13ad2.css",
+    "main.js": "/paul-tom/static/js/main.49cd9169.js",
+    "static/js/453.55a7d773.chunk.js": "/paul-tom/static/js/453.55a7d773.chunk.js",
+    "index.html": "/paul-tom/index.html",
+    "main.e6c13ad2.css.map": "/paul-tom/static/css/main.e6c13ad2.css.map",
+    "main.49cd9169.js.map": "/paul-tom/static/js/main.49cd9169.js.map",
+    "453.55a7d773.chunk.js.map": "/paul-tom/static/js/453.55a7d773.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.49cd9169.js"
+  ]
+}
